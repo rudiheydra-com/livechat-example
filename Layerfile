@@ -34,3 +34,8 @@ RUN docker-compose exec cypress bash /../../app/run_tests.sh
 
 
 
+
+
+
+
+
