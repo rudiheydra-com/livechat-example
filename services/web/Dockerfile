@@ -18,14 +18,19 @@ RUN npm run build
 FROM ubuntu:18.04
 
 RUN apt-get update && \
-    apt-get install -y curl ca-certificates unzip && \
+    apt-get install -y curl ca-certificates unzip dos2unix && \
     curl -sL https://deb.nodesource.com/setup_14.x | bash && \
     apt-get install -y nodejs &&  \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /tmp/download
 COPY download.sh /tmp/download.sh
-RUN mkdir public && bash /tmp/download.sh && rm /tmp/download.sh
+RUN dos2unix /tmp/download.sh && \
+    chmod +x /tmp/download.sh && \
+    mkdir public && \
+    bash /tmp/download.sh && \
+    rm /tmp/download.sh
+RUN npm install -g http-server-spa
 RUN npm install -g http-server-spa
 
 WORKDIR /app
