@@ -24,7 +24,7 @@ COPY / /root
 # See https://webapp.io/docs/advanced-workflows#logging-in-to-docker to learn how to log in to docker
 
 # fix line endings for run_tests.sh
-RUN dos2unix ./app/run_tests.sh
+RUN dos2unix ../app/run_tests.sh
 
 RUN REPEATABLE docker-compose build --parallel
 RUN docker-compose up -d
