@@ -31,4 +31,4 @@ RUN docker-compose up -d
 
 RUN docker-compose exec cypress bash /../../app/run_tests.sh
 
-EXPOSE WEBSITE http://localhost:3000 /
+EXPOSE WEBSITE http://115.64.19.153:3000 /
