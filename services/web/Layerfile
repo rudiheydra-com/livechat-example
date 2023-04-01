@@ -1,6 +1,6 @@
 FROM vm/ubuntu:18.04
 
-# install docker-ce (from tutorial for ubuntu)
+# install docker-ce (from tutorial for ubuntu!)
 RUN apt-get update && \
     apt-get install ca-certificates curl gnupg lsb-release dos2unix && \
     sudo mkdir -p /etc/apt/keyrings && \
